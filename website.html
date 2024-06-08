@@ -1,0 +1,240 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title> Proposal </title>
+        <style>
+            body{
+                background-color: #ebeae6;
+            }
+
+            .nbox {
+                position: absolute;
+                top: 0;
+                left: 50%;
+                transform: translate(-50%,-50%) scale(0.1);
+                text-align: center;
+                background-color: white;
+                border-radius: 20px;
+                box-shadow: 5px 5px 10px rgba(0,0,0,0.15);
+                padding-top:20px;
+                padding-left: 10px;
+                padding-right: 10px;
+                padding-bottom: 10px;
+                transition: transform 0.4s, top 0.4s;
+                visibility: hidden;
+                transition: transform 0.4s, top 0.4s;
+            }
+
+            .open-nbox{
+                visibility: visible;
+                top: 50%;
+                transform: translate(-50%,-50%) scale(1);
+            }
+
+            .nbox img{
+                width: 200px;
+                height: 250px;
+                object-fit: cover;
+                object-position: bottom;
+            }
+
+            .not{
+                margin-left: 60px;
+                margin-top: 50px;
+                margin-right: 70px;
+                background-color: rgb(200, 0, 0);
+                color: white;
+                border:none;
+                cursor:pointer;
+                padding-top: 5px;
+                padding-bottom: 5px;
+                border-radius: 11px;
+                width: 53px;
+                transition: opacity 0.15s;
+            }
+            .not:hover {
+                opacity: 0.8;
+            }
+            .not:active{
+                opacity:0.5;
+            }
+
+            .ybox {
+                position: absolute;
+                top: 0;
+                left: 50%;
+                transform: translate(-50%,-50%) scale(0.1);
+                text-align: center;
+                background-color: white;
+                border-radius: 20px;
+                box-shadow: 5px 5px 10px rgba(0,0,0,0.15);
+                padding-left: 10px;
+                padding-right: 10px;
+                padding-bottom: 10px;
+                visibility: hidden;
+                transition: transform 0.4s, top 0.4s;
+            }
+            .open-ybox{
+                visibility: visible;
+                top: 50%;
+                transform: translate(-50%,-50%) scale(1);
+            }
+
+
+            .ybox img{
+                width: 700px;
+                margin-top: -150px;
+            }
+            .ytext{
+                text-align: center;
+                width: 700px;
+            }
+
+            .yes{
+                margin-left: 70px;
+                margin-top: 70px;
+                margin-right: 70px;
+                background-color: green;
+                color: white;
+                border:none;
+                cursor:pointer;
+                padding-top: 5px;
+                padding-bottom: 5px;
+                padding-left: 15px;
+                padding-right: 15px;
+                border-radius: 11px;
+                transition: opacity 0.15s;
+                margin-bottom:20px
+            }
+
+            .yes:hover {
+                opacity: 0.8;
+            }
+            .yes:active{
+                opacity:0.5;
+            }
+
+            a:link{
+                text-decoration: none;
+                color: white;
+            }
+            a:visited{
+                text-decoration: none;
+                color: white;
+            }
+            
+
+            .qbox {
+                position: absolute;
+                top: 50%;
+                left: 50%;
+                transform: translate(-50%,-50%);
+                text-align: center;
+                background-color: white;
+                border-radius: 20px;
+                box-shadow: 5px 5px 10px rgba(0,0,0,0.15);
+                padding-left: 10px;
+                padding-right: 10px;
+            }
+
+            .no{
+                margin-left: 0px;
+                margin-top: 70px;
+                margin-right: 70px;
+                background-color: rgb(200, 0, 0);
+                color: white;
+                border:none;
+                cursor:pointer;
+                padding-top: 5px;
+                padding-bottom: 5px;
+                padding-left: 15px;
+                padding-right: 15px;
+                border-radius: 11px;
+                width: 53px;
+                transition: opacity 0.15s;
+            }
+            .no:hover {
+                opacity: 0.8;
+            }
+            .no:active{
+                opacity:0.5;
+            }
+            .qtext{
+                text-align: center;
+                width: 318.75px;
+
+
+            }
+            .text{
+                font-size: 40px;
+                margin-bottom: 0px;
+                margin-top: 10px;
+            }
+            .qbox img{
+                width: 250px;
+                margin-top: -150px;
+            }
+
+            .ii {
+                position: absolute;
+                bottom:-5%;
+                left: 50%;
+                transform: translate(-50%,-50%);
+            }
+            .ii img{
+                width: 1500px;
+            }
+
+              </style>
+    </head>
+    <body>
+        <div class="ii">            
+            <img src="below.png"></div>
+
+
+ <div class="qbox"> 
+        <img src="milli.png">
+        <p class="text">Question!</p>
+        <p class="qtext">Milli! We have encountered a very important question for you! Do you love me?</p>
+        <button class="yes" onclick="openybox()">Yes</button>
+        <button class="no" onclick="opennbox()"> No</button>
+    </div>
+    <div class="ybox" id="ybox"> 
+        <img src="message.png">
+        <p class="text">Hurray!!</p>
+        <p class="ytext">Ohh same Ig...Yk I just love your eyes, your smile, your hairs. Lately everything about u. There are secret messages on this website for you! Click on the button to find it out!</p>
+        <button class="yes" onclick="closeybox()">
+            <a href="https://in.pinterest.com/pin/20829217018617883/" target="_blank">
+                I Love You More
+            </a></button>
+    </div>
+    <div class="nbox" id="nbox"> 
+        <img src="mute.jpg">
+        <p class="text">Seriously!!</p>
+        <p class="qtext">Milli! Are you stupid or whott!?</p>
+        <button class="not" onclick="closenbox()">Sorry</button>
+    </div>
+    <script>
+        let ybox= document.getElementById("ybox");
+
+        function openybox(){
+            ybox.classList.add("open-ybox");
+
+        }
+        function closeybox(){
+            ybox.classList.remove("open-ybox");
+
+        }
+
+        let nbox= document.getElementById("nbox");
+        function opennbox(){
+            nbox.classList.add("open-nbox");
+        }
+        function closenbox(){
+            nbox.classList.remove("open-nbox");
+        }
+
+    </script>
+
+    </body>
+    </html>
